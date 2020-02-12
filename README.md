@@ -15,7 +15,7 @@
 
 ### 数据准备
 源数据来自于 [http://research.microsoft.com/lang2code/](http://research.microsoft.com/lang2code/) ，解压后保存在 language2code/ifttt_data 中  
-对其中的 data/turk_public.tsv 运行language2code/baselines/retrieval/preprocess.py ，可得到data.pickle
+对其中的 data/turk_public.tsv 运行preprocess.py ，可得到data.pickle
 
 ### Program Retrieval
 路径： language2code/baselines/retrival/  
