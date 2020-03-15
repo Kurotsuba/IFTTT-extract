@@ -1,0 +1,68 @@
+{
+   "architecture": {
+      "label_groupings": [
+         [
+            0
+         ],
+         [
+            1
+         ],
+         [
+            2
+         ],
+         [
+            3
+         ]
+      ],
+      "label_types": [
+         0,
+         1,
+         2,
+         3
+      ],
+      "max_word_id": -1,
+      "share_word_embeddings": false
+   },
+   "eval": {
+      "freq": 0.5,
+      "max_unsuccessful_trials": 5,
+      "relevant_labels": [
+         4,
+         5
+      ],
+      "unit": "epochs"
+   },
+   "label_types": [
+      0
+   ],
+   "model": {
+      "bidirectional": true,
+      "cell_type": "BasicLSTMCell",
+      "decoder": "LA",
+      "embedding_size": 50,
+      "keep_prob": 0.5,
+      "memory_size": 25,
+      "name": "rnn",
+      "num_layers": 1,
+      "num_units": 50,
+      "use_embedding": true
+   },
+   "optim": {
+      "batch_size": 32,
+      "init": {
+         "name": "random_uniform_initializer",
+         "scale": 0.10000000000000001
+      },
+      "lr_scheduler": {
+         "decay_rate": 0.90000000000000002,
+         "decay_steps": 1000,
+         "learning_rate": 0.01,
+         "name": "exponential_decay",
+         "staircase": true
+      },
+      "max_grad_norm": 5,
+      "optimizer": {
+         "name": "AdamOptimizer"
+      }
+   }
+}

@@ -1,0 +1,817 @@
+{
+   "architecture": {
+      "label_groupings": [
+         [
+            0
+         ],
+         [
+            1
+         ],
+         [
+            2
+         ],
+         [
+            3
+         ]
+      ],
+      "label_types": [
+         0,
+         1,
+         2,
+         3
+      ],
+      "max_word_id": 4000,
+      "share_word_embeddings": false
+   },
+   "eval": {
+      "freq": 0.5,
+      "max_unsuccessful_trials": 5,
+      "relevant_labels": [
+         4,
+         5
+      ],
+      "unit": "epochs"
+   },
+   "label_types": [
+      0
+   ],
+   "model": {
+      "bidirectional": true,
+      "cell_type": "BasicLSTMCell",
+      "decoder": "LA",
+      "embedding_size": 50,
+      "keep_prob": 0.5,
+      "memory_size": 25,
+      "name": "Dict",
+      "num_layers": 1,
+      "num_units": 50,
+      "use_embedding": true
+   },
+   "optim": {
+      "batch_size": 32,
+      "init": {
+         "name": "random_uniform_initializer",
+         "scale": 0.10000000000000001
+      },
+      "lr_scheduler": {
+         "decay_rate": 0.90000000000000002,
+         "decay_steps": 1000,
+         "learning_rate": 0.01,
+         "name": "exponential_decay",
+         "staircase": true
+      },
+      "max_grad_norm": 5,
+      "optimizer": {
+         "name": "AdamOptimizer"
+      }
+   }
+}
+
+('max length:', 25)
+Buckets: [25]
+Testing every 1063 steps.
+.........................................................................................................................
+Num tests below best accuracy: 0
+Keys: ['trigger_chans', 'trigger_funcs', 'action_chans', 'action_funcs', 'tc+ac', 'tc+tf+ac+af']
+This time: [0.08104265 0.05094787 0.09834123 0.00663507 0.00924171 0.0014218 ]
+Current best: [0.08104265 0.05094787 0.09834123 0.00663507 0.00924171 0.0014218 ]
+Best iters: [1. 1. 1. 1. 1. 1.]
+test-gold best: [0.03253425 0.00684932 0.06849315 0.00342466 0.0119863  0.        ]
+dev best: [0.08104265 0.05094787 0.09834123 0.00663507 0.00924171 0.0014218 ]
+test-english best: [0.07406306 0.03063653 0.10856633 0.00416419 0.01041047 0.        ]
+train best: [0.08239942 0.03062438 0.1058414  0.00423013 0.00962061 0.00029376]
+test-intelligible best: [0.08143939 0.03484848 0.10151515 0.00340909 0.01174242 0.        ]
+test best: [0.08038253 0.03256655 0.10416128 0.00387697 0.01033859 0.00025846]
+test step 1:
+train: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.0823994278908
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.0306243840605
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.105841398239
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.0042301309295
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.00962060969323
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.000293759076158
+}
+value {
+  tag: "eval_time"
+  simple_value: 6.95551490784
+}
+
+test-gold: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.0325342454016
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.00684931501746
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.0684931501746
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.00342465750873
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.0119863012806
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.0
+}
+
+dev: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.0810426548123
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.0509478673339
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.0983412340283
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.00663507124409
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.00924170576036
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.00142180093098
+}
+
+test-english: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.0740630552173
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.0306365266442
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.108566328883
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.00416418816894
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.0104104699567
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.0
+}
+
+test-intelligible: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.0814393907785
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.034848485142
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.10151515156
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.00340909091756
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.0117424242198
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.0
+}
+
+test: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.0803825259209
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.0325665548444
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.104161284864
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.00387697084807
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.0103385886177
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.000258464715444
+}
+
+Saved model at global step 1
+.........................................................................................................................
+Num tests below best accuracy: 0
+Keys: ['trigger_chans', 'trigger_funcs', 'action_chans', 'action_funcs', 'tc+ac', 'tc+tf+ac+af']
+This time: [0.64241706 0.49526066 0.61137441 0.53554502 0.44691943 0.30473934]
+Current best: [0.64241706 0.49526066 0.61137441 0.53554502 0.44691943 0.30473934]
+Best iters: [1064. 1064. 1064. 1064. 1064. 1064.]
+test-gold best: [0.85273973 0.65239726 0.87157534 0.84075342 0.75171233 0.55650685]
+dev best: [0.64241706 0.49526066 0.61137441 0.53554502 0.44691943 0.30473934]
+test-english best: [0.66121356 0.49821535 0.63117192 0.54759072 0.46400952 0.30904224]
+train best: [0.68046355 0.52528531 0.66255894 0.57811789 0.50204897 0.351424  ]
+test-intelligible best: [0.74848485 0.56022727 0.72689394 0.63371212 0.56022727 0.36931818]
+test best: [0.63194624 0.47583355 0.62134919 0.53295425 0.43732231 0.28973895]
+test step 1064:
+train: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.680463552475
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.525285303593
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.662558913231
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.578117907047
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.502048969269
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.351424008608
+}
+value {
+  tag: "eval_time"
+  simple_value: 6.81393718719
+}
+
+test-gold: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.852739751339
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.652397274971
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.87157535553
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.840753436089
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.751712322235
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.556506872177
+}
+
+dev: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.64241707325
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.49526065588
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.611374378204
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.535545051098
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.446919441223
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.304739326239
+}
+
+test-english: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.661213576794
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.498215347528
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.631171941757
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.547590732574
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.464009523392
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.30904224515
+}
+
+test-intelligible: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.74848484993
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.560227274895
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.72689396143
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.633712112904
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.560227274895
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.369318187237
+}
+
+test: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.631946265697
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.475833535194
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.621349215508
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.532954275608
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.437322318554
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.289738953114
+}
+
+Saved model at global step 1064
+.........................................................................................................................
+Num tests below best accuracy: 0
+Keys: ['trigger_chans', 'trigger_funcs', 'action_chans', 'action_funcs', 'tc+ac', 'tc+tf+ac+af']
+This time: [0.66208531 0.52914692 0.63080569 0.56184834 0.47180095 0.34004739]
+Current best: [0.66208531 0.52914692 0.63080569 0.56184834 0.47180095 0.34004739]
+Best iters: [2127. 2127. 2127. 2127. 2127. 2127.]
+test-gold best: [0.89383562 0.80308219 0.87671233 0.88869863 0.78253425 0.7260274 ]
+dev best: [0.66208531 0.52914692 0.63080569 0.56184834 0.47180095 0.34004739]
+test-english best: [0.68441404 0.55740631 0.63146936 0.57019631 0.48274836 0.36823319]
+train best: [0.71474524 0.58646064 0.6880866  0.62041919 0.5410308  0.41468502]
+test-intelligible best: [0.77310606 0.62878788 0.73484848 0.66704545 0.58333333 0.44431818]
+test best: [0.65779271 0.53243732 0.619023   0.55052985 0.4556733  0.34427501]
+test step 2127:
+train: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.714745223522
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.586460649967
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.688086628914
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.620419204235
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.541030824184
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.41468501091
+}
+value {
+  tag: "eval_time"
+  simple_value: 6.58273029327
+}
+
+test-gold: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.893835604191
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.803082168102
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.876712322235
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.888698637486
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.782534241676
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.726027369499
+}
+
+dev: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.662085294724
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.529146909714
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.630805671215
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.561848342419
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.47180095315
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.340047389269
+}
+
+test-english: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.684414029121
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.557406306267
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.631469368935
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.570196330547
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.482748359442
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.368233203888
+}
+
+test-intelligible: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.77310603857
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.628787875175
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.734848499298
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.667045474052
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.583333313465
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.444318175316
+}
+
+test: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.657792687416
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.532437324524
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.619023025036
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.550529837608
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.45567330718
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.344274997711
+}
+
+Saved model at global step 2127
+Num tests below best accuracy: 0
+Keys: ['trigger_chans', 'trigger_funcs', 'action_chans', 'action_funcs', 'tc+ac', 'tc+tf+ac+af']
+This time: [0.65331754 0.52654028 0.63317536 0.55971564 0.47180095 0.34004739]
+Current best: [0.66208531 0.52914692 0.63317536 0.56184834 0.47180095 0.34004739]
+Best iters: [2127. 2127. 3190. 2127. 3190. 3190.]
+test-gold best: [0.89383562 0.80308219 0.84931507 0.88869863 0.75856164 0.71061644]
+dev best: [0.66208531 0.52914692 0.63317536 0.56184834 0.47180095 0.34004739]
+test-english best: [0.68441404 0.55740631 0.63503867 0.57019631 0.47828673 0.36168947]
+train best: [0.71474524 0.58646064 0.70932538 0.62041919 0.57228677 0.45437187]
+test-intelligible best: [0.77310606 0.62878788 0.73295455 0.66704545 0.57689394 0.43636364]
+test best: [0.65779271 0.53243732 0.62031533 0.55052985 0.45619023 0.3406565 ]
+test step 3190:
+train: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.733927726746
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.616952836514
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.709325373173
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.644566178322
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.572286784649
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.454371869564
+}
+value {
+  tag: "eval_time"
+  simple_value: 6.07906007767
+}
+
+test-gold: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.88356167078
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.794520556927
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.849315047264
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.880136966705
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.75856167078
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.710616409779
+}
+
+dev: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.653317511082
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.526540279388
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.633175373077
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.559715628624
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.47180095315
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.340047389269
+}
+
+test-english: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.673706114292
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.555026769638
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.635038673878
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.571683526039
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.478286743164
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.361689478159
+}
+
+test-intelligible: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.761742413044
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.623106062412
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.73295456171
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.665530323982
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.576893925667
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.436363637447
+}
+
+test: value {
+  tag: "test_acc/trigger_chans"
+  simple_value: 0.653657257557
+}
+value {
+  tag: "test_acc/trigger_funcs"
+  simple_value: 0.532437324524
+}
+value {
+  tag: "test_acc/action_chans"
+  simple_value: 0.620315313339
+}
+value {
+  tag: "test_acc/action_funcs"
+  simple_value: 0.554923772812
+}
+value {
+  tag: "test_acc/tc+ac"
+  simple_value: 0.456190228462
+}
+value {
+  tag: "test_acc/tc+tf+ac+af"
+  simple_value: 0.340656489134
+}
+
+Saved model at global step 3190
+Config:
+{
+   "architecture": {
+      "label_groupings": [
+         [
+            0
+         ],
+         [
+            1
+         ],
+         [
+            2
+         ],
+         [
+            3
+         ]
+      ],
+      "label_types": [
+         0,
+         1,
+         2,
+         3
+      ],
+      "max_word_id": 4000,
+      "share_word_embeddings": false
+   },
+   "eval": {
+      "freq": 0.5,
+      "max_unsuccessful_trials": 5,
+      "relevant_labels": [
+         4,
+         5
+      ],
+      "unit": "epochs"
+   },
+   "label_types": [
+      0
+   ],
+   "model": {
+      "bidirectional": true,
+      "cell_type": "BasicLSTMCell",
+      "decoder": "LA",
+      "embedding_size": 50,
+      "keep_prob": 0.5,
+      "memory_size": 25,
+      "name": "Dict",
+      "num_layers": 1,
+      "num_units": 50,
+      "use_embedding": true
+   },
+   "optim": {
+      "batch_size": 32,
+      "init": {
+         "name": "random_uniform_initializer",
+         "scale": 0.10000000000000001
+      },
+      "lr_scheduler": {
+         "decay_rate": 0.90000000000000002,
+         "decay_steps": 1000,
+         "learning_rate": 0.01,
+         "name": "exponential_decay",
+         "staircase": true
+      },
+      "max_grad_norm": 5,
+      "optimizer": {
+         "name": "AdamOptimizer"
+      }
+   }
+}
+
+Label names: ['trigger_chans', 'trigger_funcs', 'action_chans', 'action_funcs', 'tc+ac', 'tc+tf+ac+af']
+Best accuracies: [0.66208531 0.52914692 0.63317536 0.56184834 0.47180095 0.34004739]
+Best iters: [2127. 2127. 3190. 2127. 3190. 3190.]
+Logdir: old_model

@@ -1,0 +1,174 @@
+old_result.pkl
+=================
+test-gold
+--------------------
+trigger_chans 0.8938356164383562
+trigger_funcs 0.803082191780822
+action_chans 0.8767123287671232
+action_funcs 0.8886986301369864
+tc+ac 0.7825342465753424
+tc+tf+ac+af 0.726027397260274
+
+test-intelligible
+--------------------
+trigger_chans 0.7731060606060606
+trigger_funcs 0.6287878787878788
+action_chans 0.7348484848484849
+action_funcs 0.6670454545454545
+tc+ac 0.5833333333333334
+tc+tf+ac+af 0.44431818181818183
+
+test-english
+--------------------
+trigger_chans 0.6844140392623439
+trigger_funcs 0.5574063057703748
+action_chans 0.6314693634741225
+action_funcs 0.5701963117192147
+tc+ac 0.48274836406900656
+tc+tf+ac+af 0.3682331945270672
+
+old_result.pkl
+=================
+test-gold
+--------------------
+trigger_chans 0.8938356164383562
+trigger_funcs 0.803082191780822
+action_chans 0.8767123287671232
+action_funcs 0.8886986301369864
+tc+ac 0.7825342465753424
+tc+tf+ac+af 0.726027397260274
+
+test-intelligible
+--------------------
+trigger_chans 0.7731060606060606
+trigger_funcs 0.6287878787878788
+action_chans 0.7348484848484849
+action_funcs 0.6670454545454545
+tc+ac 0.5833333333333334
+tc+tf+ac+af 0.44431818181818183
+
+test-english
+--------------------
+trigger_chans 0.6844140392623439
+trigger_funcs 0.5574063057703748
+action_chans 0.6314693634741225
+action_funcs 0.5701963117192147
+tc+ac 0.48274836406900656
+tc+tf+ac+af 0.3682331945270672
+
+old_result.pkl
+=================
+test-gold
+--------------------
+trigger_chans 0.8938356164383562
+trigger_funcs 0.803082191780822
+action_chans 0.8767123287671232
+action_funcs 0.8886986301369864
+tc+ac 0.7825342465753424
+tc+tf+ac+af 0.726027397260274
+
+test-intelligible
+--------------------
+trigger_chans 0.7731060606060606
+trigger_funcs 0.6287878787878788
+action_chans 0.7348484848484849
+action_funcs 0.6670454545454545
+tc+ac 0.5833333333333334
+tc+tf+ac+af 0.44431818181818183
+
+test-english
+--------------------
+trigger_chans 0.6844140392623439
+trigger_funcs 0.5574063057703748
+action_chans 0.6314693634741225
+action_funcs 0.5701963117192147
+tc+ac 0.48274836406900656
+tc+tf+ac+af 0.3682331945270672
+
+old_result.pkl
+=================
+test-gold
+--------------------
+trigger_chans 0.8938356164383562
+trigger_funcs 0.803082191780822
+action_chans 0.8767123287671232
+action_funcs 0.8886986301369864
+tc+ac 0.7825342465753424
+tc+tf+ac+af 0.726027397260274
+
+test-intelligible
+--------------------
+trigger_chans 0.7731060606060606
+trigger_funcs 0.6287878787878788
+action_chans 0.7348484848484849
+action_funcs 0.6670454545454545
+tc+ac 0.5833333333333334
+tc+tf+ac+af 0.44431818181818183
+
+test-english
+--------------------
+trigger_chans 0.6844140392623439
+trigger_funcs 0.5574063057703748
+action_chans 0.6314693634741225
+action_funcs 0.5701963117192147
+tc+ac 0.48274836406900656
+tc+tf+ac+af 0.3682331945270672
+
+old_result.pkl
+=================
+test-gold
+--------------------
+trigger_chans 0.8938356164383562
+trigger_funcs 0.803082191780822
+action_chans 0.8767123287671232
+action_funcs 0.8886986301369864
+tc+ac 0.7825342465753424
+tc+tf+ac+af 0.726027397260274
+
+test-intelligible
+--------------------
+trigger_chans 0.7731060606060606
+trigger_funcs 0.6287878787878788
+action_chans 0.7348484848484849
+action_funcs 0.6670454545454545
+tc+ac 0.5833333333333334
+tc+tf+ac+af 0.44431818181818183
+
+test-english
+--------------------
+trigger_chans 0.6844140392623439
+trigger_funcs 0.5574063057703748
+action_chans 0.6314693634741225
+action_funcs 0.5701963117192147
+tc+ac 0.48274836406900656
+tc+tf+ac+af 0.3682331945270672
+
+averaged
+==========================
+test-gold
+--------------------
+trigger_chans 0.8938356164383562
+trigger_funcs 0.803082191780822
+action_chans 0.8767123287671232
+action_funcs 0.8886986301369864
+tc+ac 0.7825342465753424
+tc+tf+ac+af 0.726027397260274
+
+test-intelligible
+--------------------
+trigger_chans 0.7731060606060606
+trigger_funcs 0.6287878787878788
+action_chans 0.7348484848484849
+action_funcs 0.6670454545454545
+tc+ac 0.5833333333333334
+tc+tf+ac+af 0.44431818181818183
+
+test-english
+--------------------
+trigger_chans 0.6844140392623439
+trigger_funcs 0.5574063057703748
+action_chans 0.6314693634741225
+action_funcs 0.5701963117192147
+tc+ac 0.48274836406900656
+tc+tf+ac+af 0.3682331945270672
+
