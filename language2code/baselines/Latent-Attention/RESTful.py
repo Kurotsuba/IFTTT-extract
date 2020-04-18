@@ -400,7 +400,9 @@ with tf.variable_scope('model', reuse=None, initializer=None):
   m = ifttt_train.create_model(is_training=False)
 
 saver = tf.train.Saver(max_to_keep=0)
-with tf.Session() as sess:
+config = tf.ConfigProto()
+config.gpu_options.allow_growth = True
+with tf.Session(config = config) as sess:
   saver.restore(sess, args.load_model)
   app.run()
 

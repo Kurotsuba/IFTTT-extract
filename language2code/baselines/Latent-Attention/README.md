@@ -1,75 +1,30 @@
 # Latent Attention For If-Then Program Synthesis
 
-This repo provides the code to replicate the experiments in the paper
+## Original Readme 
+原项目的Readme文档位置在[这里](https://github.com/Jungyhuk/Latent-Attention/blob/master/README.md)可以找到，由于我修改了代码，用原来的流程可能无法顺利运行项目，如果有需要请使用[原项目](https://github.com/Jungyhuk/Latent-Attention)
 
-> Xinyun Chen, Chang Liu, Richard Shin, Dawn Song, Mingcheng Chen, <cite> Latent Attention For If-Then Program Synthesis </cite>,
-> in Proc. of NIPS 2016
+## 前置需求 
+python2.7 
+sklearn 
+jsonnet 
+TensorFlow v1.14 
 
-Paper [[arXiv](https://arxiv.org/abs/1611.01867)] [[NIPS](https://papers.nips.cc/paper/6284-latent-attention-for-if-then-program-synthesis.pdf)]
+## 数据集
+源数据为ifttt_data/coreresults.tsv，使用process_IFTTT_data_xxx.py可以对应的得到不同类型的数据，如想要得到包含用户信息的数据集，可以使用 
 
-# Prerequisites
+	python2.7 process_IFTTT_data_user.py --input-file ../../ifttt_data/coreresults.tsv --output data_user.pkl
 
-Tensorflow version >= v0.7
+为了开发方便也可以使用小一些的数据，在ifttt_data下有一个toyresults.tsv，替换入input-file参数即可
 
-[sklearn](http://scikit-learn.org/stable/index.html)
+## 知识图谱
+使用了部署在实验室服务器的知识图谱，如果没有这个知识图谱也可以运行，但是效果会比较差
 
-[jsonnet](https://github.com/google/jsonnet)
+## 运行
+目前可以直接运行的有两个方案：使用知识图谱进行修正的autofix，以及再其基础上加入用户信息修正的user_autofix 
+如果想要运行autofix方案  
 
-# Datasets
+	python2.7 train_autofix.py --dataset data.pkl --config configs/model.jsonnet --logdir model --output result
+如果想要运行user_autofix方案  
 
-## IFTTT
-
-We use the same crawler from [Quirk et al.](http://www.aclweb.org/anthology/P15-1085) to crawl recipes from IFTTT.com.
-
-Processed data can be found in [here](./dataset/IFTTT/msr_data.pkl).
-
-## Zapier
-
-We additional provide a preprocessed dataset derived from [Zapier](https://zapier.com/) recipes crawled using [a crawler](https://github.com/miguelcb84/ewe-scrapers/blob/master/ewescrapers/spiders/zapier_spiders.py).
-
-Processed data can be found under [this folder](./dataset/Zapier/).
-
-# Usage
-
-## Model architectures
-
-The code includes the implementation of following models:
-
-* BDLSTM+LA: in configs/model.jsonnet, set model/name to be "rnn",  model/decoder to be "LA".
-* BDLSTM+A: in configs/model.jsonnet, set model/name to be "rnn",  model/decoder to be "attention".
-* BDLSTM: in configs/model.jsonnet, set model/name to be "rnn",  don't set model/decoder(delete this line or set it to "").
-* Dict+LA: in configs/model.jsonnet, set model/name to be "Dict",  model/decoder to be "LA".
-* Dict+A: in configs/model.jsonnet, set model/name to be "Dict",  model/decoder to be "attention".
-* Dict: in configs/model.jsonnet, set model/name to be "Dict",  don't set model/decoder(delete this line or set it to ""). 
-
-## Run experiments
-
-In the following we list some important arguments in `train.py`:
-* `--dataset`: path to the preprocessed dataset.
-* `--load-model`: path to the pretrained model (optional).
-* `--config`: path to the file that stores the configuration of model architecture.
-* `--logdir`: path to the directory that stores the models (optional).
-* `--output`: name of the file that stores the prediction results (no need to specify the filename extension, the output is a pickle (.pkl) file).
-
-```bash
-python train.py --dataset dataset/IFTTT/msr_data.pkl --config configs/model.jsonnet --logdir model --output result
-```
-
-To ensemble results of several models:
-
-```bash
-python test_ensemble_probs.py --data dataset/IFTTT/msr_data.pkl --res result_0.pkl result_1.pkl ... result_N.pkl
-```
-
-# Citation
-
-If you use the code in this repo, please cite the following paper:
-
-```
-@inproceedings{chen2016latent,
-  title={Latent Attention For If-Then Program Synthesis},
-  author={Chen, Xinyun and Liu, Chang and Shin, Richard and Song, Dawn and Chen, Mingcheng},
-  booktitle={Proceedings of the 29th Advances in Neural Information Processing Systems},
-  year={2016}
-}
-```
+	python2.7 train_user_autofix.py --dataset data_user.pkl --config configs/model.jsonnet --logdir model --output result
+训练出的模型会保存在model文件夹中，user_autofix方案的数据必须含有用户信息，也就是使用process_IFTTT_data_user.py处理处的数据才可以

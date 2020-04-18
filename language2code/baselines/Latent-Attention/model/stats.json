@@ -1,1 +1,0 @@
-{"keys": ["trigger_chans", "trigger_funcs", "action_chans", "action_funcs", "tc+ac", "tc+tf+ac+af"], "best_iters": [30878.0, 30878.0, 28071.0, 25264.0, 28071.0, 25264.0], "best_accuracy": [0.7271151795236402, 0.6173124777817277, 0.705696765019552, 0.6405527906150018, 0.5850959829363669, 0.48533594027728405], "num_tests_below_best": 5}

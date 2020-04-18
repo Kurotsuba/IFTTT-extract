@@ -45,106 +45,6 @@ def read_msr_recipes(data_list, url_list):
   return recipes_by_url
 
 
-# def read_msr_recipes_from_log(lines_iter):
-#   # Example entry:
-#   # https://ifttt.com/recipes/19-new-favorite-tweet-send-me-an-email
-#   #  --> 47283
-#   #                             ID:19
-#   #                          Title:New favorite tweet? Send me an email.
-#   #                    Description:New favorite tweet to email
-#   #                         Author:kev
-#   #                       Featured:False
-#   #                           Uses:37
-#   #                      Favorites:4
-#   #                           Code:(ROOT (IF) (TRIGGER (Twitter) (FUNC (New_liked_tweet_by_you) (PARAMS))) (THEN) (ACTION (Email) (FUNC (Send_me_an_email) (PARAMS (Subject ("New favorite tweet by @{{UserName}}")) (Body ({{TweetEmbedCode}}))))))
-
-#   html = HTMLParser()
-#   recipes_by_url = {}
-#   next_url = None
-#   while True:
-#     try:
-#       # Read the URL
-#       if next_url is not None:
-#         url = next_url
-#         next_url = None
-#       else:
-#         url = next(lines_iter)
-
-#       # Read the size field
-#       size_line = next(lines_iter)
-#       if size_line is None:
-#         break  # End of file
-#       elif not size_line.startswith(' -->'):
-#         next_url = size_line
-#         continue
-
-#       # Read the ID
-#       id_line = next(lines_iter)
-#       try:
-#         recipe_id = int(re.search(r'ID:(\d+)', id_line).group(1))
-#       except:
-#         # Seems to be a URL instead?
-#         next_url = id_line
-#         continue
-
-#       title_line = next(lines_iter)
-#       recipe_title = re.search(r'Title:(.*)', title_line).group(1)
-#       recipe_title = basic_tokenizer(html.unescape(recipe_title).lower().split(
-#       ))
-
-#       next(lines_iter)  # Description
-#       next(lines_iter)  # Author
-#       next(lines_iter)  # Featured
-#       next(lines_iter)  # Uses
-#       next(lines_iter)  # Favorites
-
-#       code_line = next(lines_iter)
-#       inside_parens = r'"[^"]+"|[^)]+'
-#       trigger = re.search(
-#         r'\(TRIGGER \(({p})\) \(FUNC \(({p})\) \(PARAMS (.*)\)\)\) \(THEN\)'.format(p=inside_parens),
-#           code_line)
-#       if trigger == None:
-#         trigger_channel, trigger_function = re.search(
-#           r'\(TRIGGER \(({p})\) \(FUNC \(({p})\)'.format(p=inside_parens),
-#           code_line).groups()
-#         trigger_param = []
-#       else:
-#         trigger_channel, trigger_function, trigger_param = trigger.groups()
-#         p = re.compile('\(([^\(\)]*) \(([^\(\)]*)\)\)')
-#         trigger_param = p.findall(trigger_param)
-#       action = re.search(
-#         r'\(ACTION \(({p})\) \(FUNC \(({p})\) \(PARAMS (.*)'.format(p=inside_parens),
-#           code_line)
-#       if action == None:
-#         action_channel, action_function = re.search(
-#           r'\(ACTION \(({p})\) \(FUNC \(({p})\)'.format(p=inside_parens),
-#           code_line).groups()
-#         action_param = []
-#       else:
-#         action_channel, action_function, action_param = action.groups()
-#         p = re.compile('\(([^\(\)]*) \(([^\(\)]*)\)\)')
-#         action_param = p.findall(action_param)
-#       url = url.strip()
-#       recipes_by_url[url] = {
-#           'url': url,
-#           'id': recipe_id,
-#           'recipe': recipe_title,
-#           'trigger_chan': trigger_channel,
-#           'trigger_func': trigger_channel + '.' + trigger_function,
-#           'trigger_func_pure': trigger_function,
-#           'trigger_param': trigger_param,
-#           'action_chan': action_channel,
-#           'action_func': action_channel + '.' + action_function,
-#           'action_func_pure': action_function,
-#           'action_param': action_param
-#       }
-#     except StopIteration:
-#       break
-
-#   return recipes_by_url
-  
-
-
 def parse_msr(data_list, url_list, extra_train, train_urls, dev_urls, test_urls,
               test_turk):
   train_urls = [line.strip() for line in train_urls]
@@ -252,14 +152,6 @@ if __name__ == '__main__':
 
   args = parser.parse_args()
 
-  # with open(args.log) as log, open(args.train_urls) as train_urls, \
-  #     open(args.dev_urls) as dev_urls, open(args.test_urls) as test_urls, \
-  #     open(args.test_turk) as test_turk:
-  #   extra_train = (open(args.extra_train) if args.extra_train is not None
-  #                    else None)
-  #   data, tagged_urls = parse_msr(log, extra_train, train_urls, dev_urls,
-  #                                   test_urls, test_turk)
-
   input_data_list = []
   url_list = []
   with open(args.input_file) as in_file:
@@ -299,15 +191,6 @@ if __name__ == '__main__':
                           reverse=True)
   word_ids = {k: i for i, (k, count) in enumerate(words_dec_freq)}
 
-#  fout = open('IFTTT_words.json','w')
-
-#  word_list = []
-#  for item in words_dec_freq:
-#    new_item = {}
-#    new_item["word"] = item[0]
-#    new_item["freq"] = item[1]
-#    word_list.append(new_item)
-#  fout.write(json.dumps(word_list, indent = 1))
 
   # Make {train,test}_{trigger,action}_{channels,functions}.
   all_labels = collections.defaultdict()
@@ -341,24 +224,12 @@ if __name__ == '__main__':
         params = item['param']
         if not (m+'/'+item['func'] in train_params):
           train_params[m+'/'+item['func']] = {}
-#        for param_name_pure, param_value in params:
-#          if not (param_name_pure in train_params[m+'/'+item['func']]):
-#            train_params[m+'/'+item['func']][param_name_pure] = {}
-#            train_params[m+'/'+item['func']][param_name_pure]["<NULL>"] = 0
-#          if not (param_value in train_params[m+'/'+item['func']][param_name_pure]):
-#            train_params[m+'/'+item['func']][param_name_pure][param_value] = 0
-#          if section == 'train':
-#            train_params[m+'/'+item['func']][param_name_pure][param_value] += 1
 
   for m in ['trigger','action']:
     for item in data['train'][m]:
         params = item['param']
         for param_name in train_params[m+'/'+item['func']]:
           param_value = '<NULL>'
-#          for param in params:
-#            if param[0] == param_name:
-#              param_value = param[1]
-#              break
           if param_value == '<NULL>':
             train_params[m+'/'+item['func']][param_name][param_value] += 1
 

@@ -11,6 +11,7 @@ import numpy as np
 import tensorflow as tf
 import tf_utils
 import _jsonnet
+import auto_fix
 
 from model import *
 
@@ -24,6 +25,7 @@ class IftttTrain(tf_utils.TFMainLoop):
     self.root_logdir = args.logdir
     self.output_file = args.output
     self.incorrects = []
+    self.prev_probs = []
 
     self.data = pickle.load(open(args.dataset))
     if 'label_types' in self.data:
@@ -216,7 +218,7 @@ class IftttTrain(tf_utils.TFMainLoop):
 
       improved_categories = candidate_best_acc >= self.best_accuracy
       if improved_categories[1]:
-	probs_by_section = collections.defaultdict(
+        probs_by_section = collections.defaultdict(
             lambda: [[] for i in xrange(4)])
         labels_by_section = collections.defaultdict(
             lambda: [[] for i in xrange(4)])
@@ -230,6 +232,7 @@ class IftttTrain(tf_utils.TFMainLoop):
                                       batch_size,
                                       get_probs=True)
           assert len(all_probs) == 4
+          self.prev_probs = all_probs
 
           for row_index, row in enumerate(batch):
             for tag in row.get('tags', []):
@@ -319,11 +322,7 @@ class IftttTrain(tf_utils.TFMainLoop):
     labels = labels[:batch_size_original]
     correct = (preds == labels)
     incorrects = []
-    for i, e in enumerate(correct):
-      if  (False in e):
-        incorrects.append({'ids': ids[i],
-                           'preds': preds[i],
-                           'labels': labels[i]})
+
     if self.label_types == [0, 1, 2, 3]:
       correct = np.concatenate(
           (correct, np.all(correct[:, [0, 2]], axis=1)[:, np.newaxis],

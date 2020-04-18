@@ -1,0 +1,1864 @@
+(dp0
+S'OneDrive for Business'
+p1
+(lp2
+S'OneDrive for Business'
+p3
+aS'BP'
+p4
+aS'ODB'
+p5
+aS'Onedrive'
+p6
+asS'WIFIPLUG'
+p7
+(lp8
+S'wifiplug'
+p9
+aS'wifiplug switch'
+p10
+asS'ESPN'
+p11
+(lp12
+S'ESPN'
+p13
+aS'ESPN news'
+p14
+aS'#ESPN Breaking News'
+p15
+aS'Breaking news'
+p16
+aS'Breaking Sports News'
+p17
+aS'ESPN Fantasy Football News'
+p18
+aS'newsL7P'
+p19
+aS'Sports News'
+p20
+asS'Office 365 Calendar'
+p21
+(lp22
+S'calendar'
+p23
+aS'Office 365 Calendar'
+p24
+aS'Work Calendar'
+p25
+aS'Cal'
+p26
+aS'O365 Calendar'
+p27
+asS'Wink: Porkfolio'
+p28
+(lp29
+S'Porkfolio'
+p30
+aS'PorkFolio'
+p31
+aS'porkfolio'
+p32
+asS'HomeControl Flex'
+p33
+(lp34
+S'home'
+p35
+aS'system'
+p36
+aS'panel'
+p37
+aS'security system'
+p38
+asS'Craigslist'
+p39
+(lp40
+S'Craig List'
+p41
+aS'craigslist'
+p42
+aS'CL'
+p43
+aS'Craigslist'
+p44
+aS'listings'
+p45
+aS'craigs'
+p46
+aS'CX'
+p47
+aS'Craigslisting'
+p48
+aS'CG'
+p49
+aS'\xe2\x98\xae'
+p50
+asS'Surfline'
+p51
+(lp52
+S'Smurf'
+p53
+aS'surf'
+p54
+aS'Surf'
+p55
+aS'sf'
+p56
+aS'Surfline'
+p57
+asS'Rachio Iro'
+p58
+(lp59
+S'Iro'
+p60
+aS'Rachio'
+p61
+aS'Rachio Iro'
+p62
+aS'sprinkle system'
+p63
+aS'sprinklers'
+p64
+asS'Best Buy'
+p65
+(lp66
+S'Best Buy'
+p67
+aS'BestBuy'
+p68
+aS'bestbuy'
+p69
+aS'best Buy'
+p70
+aS'bby'
+p71
+aS'bb'
+p72
+aS'BestBuy.com'
+p73
+aS'BBY'
+p74
+asS'popSLATE'
+p75
+(lp76
+S'popSLATE device'
+p77
+aS'popSLATE'
+p78
+asS'Google Glass'
+p79
+(lp80
+S'Google Glass'
+p81
+aS'Glass'
+p82
+aS'glass'
+p83
+aS'GoogleGlass'
+p84
+aS'Google Glas'
+p85
+asS'SoundCloud'
+p86
+(lp87
+S'SoundCloud'
+p88
+aS'Soundcloud'
+p89
+aS'sound'
+p90
+aS'soundcloud'
+p91
+aS'SC'
+p92
+asS'LIFX'
+p93
+(lp94
+S'lifx'
+p95
+aS'light'
+p96
+aS'Light'
+p97
+aS'LIFX'
+p98
+aS'Lifx'
+p99
+asS'Buffer'
+p100
+(lp101
+S'Buffer'
+p102
+aS'buffer'
+p103
+aS'Buffer'
+p104
+aS'Buff'
+p105
+aS'BF'
+p106
+asS'Parrot Flower Power'
+p107
+(lp108
+S'Parrot Flower'
+p109
+aS'Flower Power'
+p110
+asS'Nest Protect'
+p111
+(lp112
+S'Nest Protect'
+p113
+aS'Nest'
+p114
+aS'nest protect'
+p115
+aS'nest'
+p116
+aS'NEST'
+p117
+asS'YouTube'
+p118
+(lp119
+S'YouTube'
+p120
+aS'youtube'
+p121
+aS'Youtube'
+p122
+aS'ytb'
+p123
+aS'tube'
+p124
+aS'YT'
+p125
+aS'yt'
+p126
+aS'Yt'
+p127
+asS'HP Print'
+p128
+(lp129
+S'ePrint'
+p130
+aS'print'
+p131
+aS'Print'
+p132
+aS'HP'
+p133
+aS'HP E print'
+p134
+asS'Sunlight Foundation'
+p135
+(lp136
+sS'Wink: Egg Minder'
+p137
+(lp138
+S'Egg Minder'
+p139
+asS'Stripe'
+p140
+(lp141
+S'Stripe'
+p142
+asS'Harvest'
+p143
+(lp144
+S'Harvest'
+p145
+asS'Eyefi'
+p146
+(lp147
+S'Eyefi'
+p148
+aS'Eye-Fi'
+p149
+asS'Instawell'
+p150
+(lp151
+S'Instawell'
+p152
+asS'Android Location'
+p153
+(lp154
+sS'Slack'
+p155
+(lp156
+S'Slack'
+p157
+asS'openHAB'
+p158
+(lp159
+sS'iOS Location'
+p160
+(lp161
+sS'ReadingPack'
+p162
+(lp163
+S'ReadingPack'
+p164
+aS'reedpaick'
+p165
+aS'RP'
+p166
+aS'Readpack'
+p167
+asS'Android SMS'
+p168
+(lp169
+S'Text'
+p170
+aS'SMS'
+p171
+aS'message'
+p172
+aS'txtmsg'
+p173
+asS'Mojio'
+p174
+(lp175
+S'Mojio'
+p176
+asS'blink(1)'
+p177
+(lp178
+S'blink'
+p179
+aS'blink(1)'
+p180
+aS'blinking Led'
+p181
+asS'DocSend'
+p182
+(lp183
+S'DocSend'
+p184
+asS'Automatic'
+p185
+(lp186
+S'Automatic'
+p187
+asS'Office 365 Contacts'
+p188
+(lp189
+S'contact'
+p190
+aS'Office 365 contact'
+p191
+asS'Instagram'
+p192
+(lp193
+S'Instagram'
+p194
+aS'Insta'
+p195
+aS'Yulstagram'
+p196
+aS'Intsagram'
+p197
+aS'Instgram'
+p198
+aS'IG'
+p199
+aS'Instragm'
+p200
+aS'instragam'
+p201
+aS'ins'
+p202
+asS'Wink: Nimbus'
+p203
+(lp204
+S'Nimbus dial'
+p205
+aS'Nimbus'
+p206
+aS'Dial'
+p207
+aS'Wink: Nimbus'
+p208
+asS'littleBits'
+p209
+(lp210
+S'Cloud Module'
+p211
+aS'littleBits'
+p212
+aS'littleBits cloud'
+p213
+aS'cloudBit'
+p214
+aS'litteBits'
+p215
+asS'Stockimo'
+p216
+(lp217
+S'Stockimo'
+p218
+asS'Office 365 Mail'
+p219
+(lp220
+S'email'
+p221
+aS'Office 365 mail'
+p222
+aS'Office 365'
+p223
+asS'Yammer'
+p224
+(lp225
+S'yammer'
+p226
+aS'yam'
+p227
+asS'Email Digest'
+p228
+(lp229
+S'digest'
+p230
+aS'email'
+p231
+asS'Gmail'
+p232
+(lp233
+S'Gmail'
+p234
+aS'Email'
+p235
+aS'mailbox'
+p236
+aS'E-mail'
+p237
+aS'mail'
+p238
+aS'text'
+p239
+aS'SMS'
+p240
+aS'message'
+p241
+aS'GM'
+p242
+asS'Evernote'
+p243
+(lp244
+S'evernote'
+p245
+aS'notebook'
+p246
+aS'note'
+p247
+aS'log'
+p248
+asS'Quip'
+p249
+(lp250
+S'Quip'
+p251
+asS'Phone Call'
+p252
+(lp253
+S'Phone Call'
+p254
+aS'VoiceNote'
+p255
+aS'Voicemail'
+p256
+aS'Voice memo'
+p257
+aS'voice'
+p258
+asS'Pinterest'
+p259
+(lp260
+S'Pin'
+p261
+aS'Pinterest'
+p262
+aS'p'
+p263
+asS'WeMo Lighting'
+p264
+(lp265
+S'WeMo'
+p266
+aS'WeMo Light'
+p267
+aS'WeMo Bulb'
+p268
+aS'light'
+p269
+asS'Facebook Pages'
+p270
+(lp271
+S'Facebook page'
+p272
+aS'Facebook'
+p273
+aS'FB page'
+p274
+aS'fb'
+p275
+aS'page'
+p276
+aS'blog'
+p277
+aS'fb'
+p278
+asS'ORBneXt'
+p279
+(lp280
+S'ORBneXt'
+p281
+aS'orb'
+p282
+asS'OneDrive'
+p283
+(lp284
+S'sky drive'
+p285
+aS'onedrive'
+p286
+aS'one drive'
+p287
+aS'skydrive'
+p288
+aS'sky'
+p289
+asS'Homeboy'
+p290
+(lp291
+S'Homeboy'
+p292
+aS'video'
+p293
+asS'eBay'
+p294
+(lp295
+S'eBay'
+p296
+asS'Gumroad'
+p297
+(lp298
+S'Gumroad'
+p299
+asS'Harmony'
+p300
+(lp301
+S'Harmony'
+p302
+aS'TV'
+p303
+asS'MivaLife'
+p304
+(lp305
+S'MivaLife'
+p306
+asS'Email'
+p307
+(lp308
+S'Email'
+p309
+aS'e-mail'
+p310
+aS'mail'
+p311
+aS'inbox'
+p312
+aS'reminder'
+p313
+asS'Sensibo'
+p314
+(lp315
+S'Sensibo'
+p316
+aS'air conditioner'
+p317
+aS'A/C'
+p318
+asS'Qapital'
+p319
+(lp320
+sS'WeMo Insight Switch'
+p321
+(lp322
+S'WeMo Insight'
+p323
+aS'WeMo'
+p324
+aS'insight switch'
+p325
+aS'insight'
+p326
+asS'Wireless Tag'
+p327
+(lp328
+S'TagManager'
+p329
+aS'wireless tag'
+p330
+aS'tag manager'
+p331
+aS'tags'
+p332
+asS'Pinboard'
+p333
+(lp334
+S'Pinboard'
+p335
+aS'pin'
+p336
+aS'pb'
+p337
+asS'Smappee'
+p338
+(lp339
+S'Smappee'
+p340
+asS'WeMo Maker'
+p341
+(lp342
+S'WeMo Maker'
+p343
+aS'Maker'
+p344
+asS'InStyle'
+p345
+(lp346
+S'InStyle'
+p347
+asS'Honeywell Single-zone Thermostat'
+p348
+(lp349
+sS'Amazon Cloud Drive'
+p350
+(lp351
+S'Amazon Cloud Drive'
+p352
+aS'Cloud Drive'
+p353
+asS'Pocket'
+p354
+(lp355
+S'Pocket'
+p356
+asS'Facebook'
+p357
+(lp358
+S'Facebook'
+p359
+aS'fb'
+p360
+aS'blog'
+p361
+asS'Pushalot'
+p362
+(lp363
+S'Push'
+p364
+aS'Pushalot'
+p365
+asS'Printhug'
+p366
+(lp367
+S'print'
+p368
+asS'Lutron Cas\xc3\xa9ta Wireless'
+p369
+(lp370
+S'light'
+p371
+asS'Digg'
+p372
+(lp373
+S'Digg'
+p374
+aS'Dugg'
+p375
+aS'd'
+p376
+asS'Boxcar 2'
+p377
+(lp378
+S'Boxcar'
+p379
+aS'BOX2'
+p380
+aS'boxer'
+p381
+asS'Weebly'
+p382
+(lp383
+S'Weebly'
+p384
+aS'wed'
+p385
+asS'Box'
+p386
+(lp387
+S'box'
+p388
+asS'reddit'
+p389
+(lp390
+S'reddit'
+p391
+aS'/r'
+p392
+aS're'
+p393
+aS'rt'
+p394
+asS'Sports Illustrated'
+p395
+(lp396
+S'Sports Illustrated'
+p397
+aS'Sports'
+p398
+asS'Particle'
+p399
+(lp400
+S'Particle'
+p401
+asS'MixRadio'
+p402
+(lp403
+S'MixRadio'
+p404
+aS'Mix Radio'
+p405
+asS'GroupMe'
+p406
+(lp407
+S'GroupMe'
+p408
+aS'group'
+p409
+asS'Android Phone Call'
+p410
+(lp411
+S'Android Phone Call'
+p412
+aS'Android Phone'
+p413
+aS'Phone Call'
+p414
+aS'call'
+p415
+asS'Wattio POD'
+p416
+(lp417
+S'Wattio POD'
+p418
+aS'Switch'
+p419
+asS'Bttn'
+p420
+(lp421
+S'bttn'
+p422
+aS'bt.tn'
+p423
+aS'button'
+p424
+asS'Android Photos'
+p425
+(lp426
+S'android photo'
+p427
+aS'photo'
+p428
+aS'android'
+p429
+aS'foto'
+p430
+asS'Fiverr'
+p431
+(lp432
+S'Fiverr'
+p433
+asS'GitHub'
+p434
+(lp435
+S'github'
+p436
+aS'git'
+p437
+aS'GIBH'
+p438
+asS'Instapush'
+p439
+(lp440
+S'Instapush'
+p441
+aS'Insta Notify'
+p442
+asS'iOS Contacts'
+p443
+(lp444
+S'ios contact'
+p445
+aS'contact'
+p446
+asS'dondeEsta Family'
+p447
+(lp448
+sS'Withings'
+p449
+(lp450
+S'Withings'
+p451
+aS'Withing'
+p452
+aS'weight'
+p453
+asS'Maker'
+p454
+(lp455
+S'Maker'
+p456
+asS'Philips hue'
+p457
+(lp458
+S'Philips Hue'
+p459
+aS'Hue'
+p460
+aS'light'
+p461
+asS'Nest Thermostat'
+p462
+(lp463
+S'Nest'
+p464
+aS'Thermostat'
+p465
+aS'Nest Thermostat'
+p466
+asS'SmartThings'
+p467
+(lp468
+S'SmartThings'
+p469
+aS'Smarthings'
+p470
+asS'Trello'
+p471
+(lp472
+S'trello'
+p473
+asS'Chain'
+p474
+(lp475
+S'Bitcoin'
+p476
+asS'People'
+p477
+(lp478
+S'People'
+p479
+aS'People.com'
+p480
+asS'Camio'
+p481
+(lp482
+S'Camio'
+p483
+aS'camera'
+p484
+asS'Tumblr'
+p485
+(lp486
+S'Tumblr'
+p487
+aS'tumbler'
+p488
+aS'tumbl'
+p489
+aS'tblr'
+p490
+aS'tb'
+p491
+aS'tublr'
+p492
+aS'T'
+p493
+asS'Honeywell evohome'
+p494
+(lp495
+S'Evohome'
+p496
+aS'Honeywell Evohome'
+p497
+aS'heating'
+p498
+asS'Delicious'
+p499
+(lp500
+S'Delicous'
+p501
+aS'Delicious'
+p502
+aS'delecius'
+p503
+aS'delesieus'
+p504
+aS'Deli'
+p505
+aS'D'
+p506
+asS'Epicurious'
+p507
+(lp508
+S'Epicurious'
+p509
+asS'NPR'
+p510
+(lp511
+S'NPR'
+p512
+asS'NewsBlur'
+p513
+(lp514
+S'NewsBlur'
+p515
+aS'newblur'
+p516
+asS'Qblinks Qmote'
+p517
+(lp518
+S'Qmote'
+p519
+asS'Spotify'
+p520
+(lp521
+S'Spotify'
+p522
+aS'SP'
+p523
+aS'S'
+p524
+asS'Adafruit'
+p525
+(lp526
+S'Adafruit'
+p527
+asS'ThermoSmart'
+p528
+(lp529
+S'ThermoSmart'
+p530
+asS'SMS'
+p531
+(lp532
+S'text'
+p533
+aS'SMS'
+p534
+aS'Message'
+p535
+aS'txt'
+p536
+aS'reminder'
+p537
+aS'notification'
+p538
+aS'alert'
+p539
+aS'mail'
+p540
+aS'phone'
+p541
+asS'Genius'
+p542
+(lp543
+S'Genius'
+p544
+asS'Sighthound Video'
+p545
+(lp546
+S'Sighthound'
+p547
+aS'camera'
+p548
+asS'Campfire'
+p549
+(lp550
+S'Campfire'
+p551
+aS'cf'
+p552
+asS'Android Wear'
+p553
+(lp554
+S'Android Wear'
+p555
+aS'Wear'
+p556
+aS'watch'
+p557
+asS'OneNote'
+p558
+(lp559
+S'OneNote'
+p560
+aS'One Note'
+p561
+aS'note'
+p562
+asS'Flickr'
+p563
+(lp564
+S'flickr'
+p565
+aS'flicker'
+p566
+aS'flikr'
+p567
+aS'fr'
+p568
+aS'filkr'
+p569
+aS'fkr'
+p570
+aS'flick'
+p571
+asS'Numerous'
+p572
+(lp573
+S'Numerous'
+p574
+aS'Number'
+p575
+asS'iOS Reading List'
+p576
+(lp577
+S'Reading List'
+p578
+aS'iOS Reading List'
+p579
+aS"Safari's Reading List"
+p580
+asS'Dailymotion'
+p581
+(lp582
+S'Dailymotion'
+p583
+aS'daily motion'
+p584
+aS'DM'
+p585
+asS'iOS Reminders'
+p586
+(lp587
+S'reminder'
+p588
+aS'siri'
+p589
+aS'iOS reminder'
+p590
+aS'IOS'
+p591
+asS'500px'
+p592
+(lp593
+S'500px'
+p594
+aS'500'
+p595
+aS'5px'
+p596
+asS'FollowUp.cc'
+p597
+(lp598
+S'FollowUp.cc'
+p599
+aS'Follow Up'
+p600
+aS'Followup'
+p601
+asS'GE Appliances GeoSpring\xe2\x84\xa2'
+p602
+(lp603
+sS'Time'
+p604
+(lp605
+S'Time'
+p606
+aS'Time.com'
+p607
+asS'Whistle'
+p608
+(lp609
+S'Whistle'
+p610
+asS'ffffound!'
+p611
+(lp612
+S'ffffound'
+p613
+aS'ffff'
+p614
+aS'ffffind'
+p615
+asS'Entertainment Weekly'
+p616
+(lp617
+S'Entertainment Weekly'
+p618
+aS'EW'
+p619
+asS'Flic'
+p620
+(lp621
+S'Flic'
+p622
+asS'Is It Christmas?'
+p623
+(lp624
+S'Christmas'
+p625
+asS'Misfit'
+p626
+(lp627
+S'Misfit'
+p628
+aS'Fitbit'
+p629
+asS'Stocks'
+p630
+(lp631
+S'stock'
+p632
+asS'Salesforce Chatter'
+p633
+(lp634
+S'Chatter in Sales Force'
+p635
+aS'Chatter'
+p636
+aS''
+p637
+asS'Yahoo! Fantasy Sports'
+p638
+(lp639
+S'Yahoo fantasy sports'
+p640
+aS'yahoo! fantasy'
+p641
+aS'yahoo fantasy'
+p642
+aS'Yahoo!'
+p643
+aS'fantasy'
+p644
+asS'Wolfram Data Drop'
+p645
+(lp646
+S'Wolfram Data Drop'
+p647
+aS'databin'
+p648
+asS'Lifelog'
+p649
+(lp650
+S'Lifelog'
+p651
+aS'log'
+p652
+asS'Android Battery'
+p653
+(lp654
+S"phone's battery"
+p655
+aS'battery'
+p656
+aS"Android device's battery"
+p657
+asS'AppZapp'
+p658
+(lp659
+S'AppZapp'
+p660
+aS'AppZap'
+p661
+aS'appstore'
+p662
+aS'App Store'
+p663
+asS'bitly'
+p664
+(lp665
+S'bitly'
+p666
+aS'bit.ly'
+p667
+aS'bit'
+p668
+aS'bili'
+p669
+asS'Moni.ai'
+p670
+(lp671
+S'Moni'
+p672
+asS'Manything'
+p673
+(lp674
+S'Manything'
+p675
+aS'cam'
+p676
+asS'Boxoh Package Tracking'
+p677
+(lp678
+S'package'
+p679
+aS'delivery Status'
+p680
+aS'shipping status'
+p681
+aS'Package Tracking'
+p682
+asS'Giphy'
+p683
+(lp684
+S'Giphy'
+p685
+aS'GIF'
+p686
+aS'Gvyv'
+p687
+asS'GreenIQ'
+p688
+(lp689
+sS'Wikipedia'
+p690
+(lp691
+S'Wikipedia'
+p692
+aS'Wiki'
+p693
+aS'wikimedia'
+p694
+asS'QualityTime'
+p695
+(lp696
+sS'WeMo Motion'
+p697
+(lp698
+S'wemos'
+p699
+aS'WeMo Motion'
+p700
+aS'motion'
+p701
+asS'Wink: Shortcuts'
+p702
+(lp703
+sS'Feed'
+p704
+(lp705
+S'Feed'
+p706
+aS'RSS'
+p707
+asS'WallyHome'
+p708
+(lp709
+S'WallyHome sensor'
+p710
+asS'Scout Alarm'
+p711
+(lp712
+S'Scout Alarm'
+p713
+aS'scout'
+p714
+aS'alarm'
+p715
+asS'Todoist'
+p716
+(lp717
+S'Todolist'
+p718
+aS'Todoist'
+p719
+aS'Todois'
+p720
+aS'Todosit'
+p721
+aS'Todo'
+p722
+aS'task'
+p723
+aS'Todist'
+p724
+aS'Task'
+p725
+asS'Twitter'
+p726
+(lp727
+S'Tweet'
+p728
+aS'Twitter'
+p729
+aS'tw'
+p730
+asS'BuzzFeed'
+p731
+(lp732
+S'buzz'
+p733
+aS'Buzzfeed'
+p734
+aS'Buzz Feed'
+p735
+aS'bf'
+p736
+asS'Toodledo'
+p737
+(lp738
+S'Toodledo'
+p739
+asS'Wink: Spotter'
+p740
+(lp741
+S'spotter'
+p742
+asS'Android Device'
+p743
+(lp744
+S'Android'
+p745
+aS'device'
+p746
+aS'phone'
+p747
+aS'Wallpapers'
+p748
+asS'App.net'
+p749
+(lp750
+S'app.net'
+p751
+aS'adn'
+p752
+aS'appnet'
+p753
+aS'app'
+p754
+asS'iSmartAlarm'
+p755
+(lp756
+S'iSmartAlarm'
+p757
+aS'iSmart Alarm'
+p758
+aS'Ismartalarm'
+p759
+aS'alarm'
+p760
+asS'Sina Weibo'
+p761
+(lp762
+S'sina weibo'
+p763
+aS'sinaweibo'
+p764
+aS'weibo'
+p765
+asS'GE Appliances Cooking'
+p766
+(lp767
+sS'Vimeo'
+p768
+(lp769
+S'Vimeo'
+p770
+aS'vim'
+p771
+asS'UP by Jawbone'
+p772
+(lp773
+S'Up'
+p774
+aS'Jawbone'
+p775
+aS'JawboneUp'
+p776
+aS'Up by Jawbone'
+p777
+asS'HomeSeer'
+p778
+(lp779
+S'HomeSeer'
+p780
+aS'device'
+p781
+asS'Google Calendar'
+p782
+(lp783
+S'Google Calendar'
+p784
+aS'Calendar'
+p785
+aS'GCalendar'
+p786
+aS'GCal'
+p787
+aS'cal'
+p788
+aS'G Cal'
+p789
+aS'Google'
+p790
+asS'Slice'
+p791
+(lp792
+S'Slice'
+p793
+aS'shipment'
+p794
+asS'Greenwave Systems'
+p795
+(lp796
+sS'Space'
+p797
+(lp798
+S'NASA'
+p799
+aS'Space'
+p800
+aS'ISS'
+p801
+aS'Astronomy'
+p802
+asS'LinkedIn'
+p803
+(lp804
+S'LinkedIn'
+p805
+aS'linked in'
+p806
+aS'LinkdIn'
+p807
+aS'in'
+p808
+aS'Li'
+p809
+asS'Nimbus Note'
+p810
+(lp811
+S'Nimbus Note'
+p812
+aS'Nimbus'
+p813
+ag637
+asS'Square'
+p814
+(lp815
+S'Square Settlements by email'
+p816
+asS'Foursquare'
+p817
+(lp818
+S'foursqare'
+p819
+aS'foursq'
+p820
+aS'4sq'
+p821
+asS'Wattio THERMIC'
+p822
+(lp823
+S'Wattio THERMIC'
+p824
+asS'IntesisHome'
+p825
+(lp826
+sS'Ubi'
+p827
+(lp828
+S'Ubi'
+p829
+asS'Amazon Alexa'
+p830
+(lp831
+S'Amazon Alexa'
+p832
+aS'Amazon Echo'
+p833
+aS'Echo'
+p834
+aS'Alexa'
+p835
+asS'Launch Center'
+p836
+(lp837
+S'Launch Center Pro'
+p838
+aS'Launch Center'
+p839
+aS'Light Switch'
+p840
+aS'LCP'
+p841
+aS'launch'
+p842
+asS'Semantics3'
+p843
+(lp844
+sS'Kyber Calendars & Reminders'
+p845
+(lp846
+sS'Yo'
+p847
+(lp848
+S'Yo!'
+p849
+aS'Yo'
+p850
+asS'ecobee'
+p851
+(lp852
+S'ecobee'
+p853
+aS'ecobee3'
+p854
+asS'Inoreader'
+p855
+(lp856
+S'Inoreader'
+p857
+asS'Wink: Pivot Power Genius'
+p858
+(lp859
+S'Pivot Power Genius'
+p860
+aS'outlet'
+p861
+aS'Pivot Power Strip'
+p862
+asS'Pushover'
+p863
+(lp864
+S'Pushover'
+p865
+aS'push'
+p866
+aS'pas'
+p867
+aS'notificacion'
+p868
+asS'Instapaper'
+p869
+(lp870
+S'Instapaper'
+p871
+aS'instaper'
+p872
+aS'intapaper'
+p873
+aS'instapepper'
+p874
+aS'insta'
+p875
+aS'inst'
+p876
+asS'WeMo Light Switch'
+p877
+(lp878
+S'WeMo Light'
+p879
+aS'WeMo Switch'
+p880
+aS'light switch'
+p881
+aS'light'
+p882
+aS'switch'
+p883
+asS'ShopYourWay'
+p884
+(lp885
+S'ShopYourWay'
+p886
+aS'syw'
+p887
+aS'Shop Your Way'
+p888
+asS'Diigo'
+p889
+(lp890
+S'Diigo'
+p891
+aS'diigo'
+p892
+aS'DIIGO'
+p893
+aS'Digg'
+p894
+aS'digoo'
+p895
+aS'DIGGO'
+p896
+asS'Google Drive'
+p897
+(lp898
+S'Google Drive'
+p899
+aS'GoogleDrive'
+p900
+aS'GDrive'
+p901
+aS'Drive'
+p902
+aS'GD'
+p903
+aS'Google spredsheet'
+p904
+aS'Google document'
+p905
+aS'Google Doc'
+p906
+aS'Google'
+p907
+aS'spreadsheet'
+p908
+asS'iOS Photos'
+p909
+(lp910
+S'iOS album'
+p911
+aS'iOS photos'
+p912
+aS'ios'
+p913
+aS'iphone photo'
+p914
+aS'iphone picture'
+p915
+aS'iphone'
+p916
+aS'photo'
+p917
+asS'Dropbox'
+p918
+(lp919
+S'Dropbox'
+p920
+aS'box'
+p921
+aS'DB'
+p922
+aS'drop'
+p923
+asS'Zubie'
+p924
+(lp925
+sS'Etsy'
+p926
+(lp927
+S'Etsy'
+p928
+asS'iSecurity+'
+p929
+(lp930
+S'camera'
+p931
+asS'Readability'
+p932
+(lp933
+S'Readability'
+p934
+aS'reading'
+p935
+aS'read'
+p936
+asS'Wink: Aros'
+p937
+(lp938
+S'Aros'
+p939
+asS'Feedly'
+p940
+(lp941
+S'Feedly'
+p942
+aS'Feed'
+p943
+aS'Feebly'
+p944
+asS'Netatmo Weather Station'
+p945
+(lp946
+S'Netatmo'
+p947
+asS'IFTTT'
+p948
+(lp949
+S'IFTTT'
+p950
+aS'recipe'
+p951
+asS'WeMo Switch'
+p952
+(lp953
+S'WeMo'
+p954
+aS'Switch'
+p955
+asS'TrackIf'
+p956
+(lp957
+S'TrackIf'
+p958
+aS'track'
+p959
+asS'Myfox HomeControl'
+p960
+(lp961
+S'Myfox system'
+p962
+aS'Myfox'
+p963
+asS'Beeminder'
+p964
+(lp965
+S'Beemind'
+p966
+aS'Beeminder'
+p967
+aS'minder'
+p968
+asS'Pryv'
+p969
+(lp970
+S'Pryv'
+p971
+asS'Pushbullet'
+p972
+(lp973
+S'Pushbullet'
+p974
+aS'BulletPush'
+p975
+aS'bullet'
+p976
+aS'push'
+p977
+aS'PB'
+p978
+asS'Energenie Mi|Home'
+p979
+(lp980
+S'Mi|Home'
+p981
+aS'Mi|Home adapter'
+p982
+asS'Deezer'
+p983
+(lp984
+S'Deezer'
+p985
+asS'Nike+'
+p986
+(lp987
+S'Nike+'
+p988
+aS'Nike'
+p989
+asS'Life360'
+p990
+(lp991
+S'Life360'
+p992
+aS'Life360 circle'
+p993
+asS'Blogger'
+p994
+(lp995
+S'Blogger'
+p996
+aS'Blog'
+p997
+aS'Bloger'
+p998
+aS'Blogr'
+p999
+aS'blooger'
+p1000
+asS'The New York Times'
+p1001
+(lp1002
+S'New York times'
+p1003
+aS'NYTimes'
+p1004
+aS'NY Times'
+p1005
+aS'NYT'
+p1006
+asS'Last.fm'
+p1007
+(lp1008
+S'Last fm'
+p1009
+aS'last.fm'
+p1010
+aS'.fm'
+p1011
+aS'lastfm'
+p1012
+asS'Dash'
+p1013
+(lp1014
+S'Dash'
+p1015
+aS'Dash log'
+p1016
+asS'Weather'
+p1017
+(lp1018
+sS'WordPress'
+p1019
+(lp1020
+S'WP'
+p1021
+aS'WordPress'
+p1022
+aS'Blog'
+p1023
+asS'IF Notifications'
+p1024
+(lp1025
+S'notification'
+p1026
+aS'if notification'
+p1027
+aS'IFTTT'
+p1028
+asS'Fitbit'
+p1029
+(lp1030
+S'Fitbit'
+p1031
+aS'fit'
+p1032
+asS'U.S. Independence Day'
+p1033
+(lp1034
+S'Independence Day'
+p1035
+aS'4th of July'
+p1036
+aS'Fourth of July'
+p1037
+asS'Garageio'
+p1038
+(lp1039
+S'garage door'
+p1040
+as.
