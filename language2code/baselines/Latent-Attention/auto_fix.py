@@ -1,5 +1,6 @@
 from SPARQLWrapper import SPARQLWrapper, JSON
 import numpy as np
+import math
 uri_subject_prefix = 'http://elite.polito.it/ontologies/eupont-ifttt.owl#'
 get_trigger_p = '<http://elite.polito.it/ontologies/eupont.owl#offerTrigger>'
 uri_object_prefix = 'http://elite.polito.it/ontologies/eupont-ifttt.owl#'
@@ -22,6 +23,14 @@ def editDis(word1,word2):
 						)
 	
 	return dp[m][n]
+
+def sim_cos(vec1, vec2):
+	same_num = 0
+	for each in vec1:
+		if each in vec2:
+			same_num += 1
+	
+	return same_num / math.sqrt(len(vec1) * len(vec2))
 
 def autoFix(predict, prev_probs, index, user_chan_list):
 	
@@ -106,16 +115,7 @@ def autoFix(predict, prev_probs, index, user_chan_list):
 		
 		else:
 		# function better than channel
-			trigger_func_entity = '<http://elite.polito.it/ontologies/eupont-ifttt.owl#trigger{}{}>'.format(t_c.lower(), t_f.replace(' ', '').lower())
-			query_str = """
-				SELECT ?object
-				WHERE {{ {} <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?object }}
-			""".format(trigger_func_entity)
 			query = SPARQLWrapper('http://202.120.40.28:4460/ifttt/query')
-			query.setQuery(query_str)
-			query.setReturnFormat(JSON)
-			query_result = query.query().convert()
-			t_f_type = query_result['results']['bindings'][1]['object']['value']
 			
 			result['trigger_chan'] = t_c
 			query_str = """
@@ -131,6 +131,16 @@ def autoFix(predict, prev_probs, index, user_chan_list):
 			t_f_result = ''
 			try:
 				# try to fix function with 'type'
+				trigger_func_entity = '<http://elite.polito.it/ontologies/eupont-ifttt.owl#trigger{}{}>'.format(t_c.lower(), t_f.replace(' ', '').lower())
+				query_str = """
+					SELECT ?object
+					WHERE {{ {} <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?object }}
+				""".format(trigger_func_entity)
+				query.setQuery(query_str)
+				query.setReturnFormat(JSON)
+				query_result = query.query().convert()
+				t_f_type = [ each['object']['value'] for each in query_result['results']['bindings'] ]
+				
 				func_type_list = []
 				for each in str_list:
 					query_name_str = """
@@ -140,17 +150,25 @@ def autoFix(predict, prev_probs, index, user_chan_list):
 					query.setQuery(query_name_str)
 					query_result = query.query().convert()
 
-					func_type_list.append(query_result['results']['bindings'][1]['object']['value'])
+					# func_type_list.append(query_result['results']['bindings'][1]['object']['value'])
+					func_type_list.append([item['object']['value'] for item in query_result['results']['bindings']])
+				
+				t_sim_cos = 0
+				result_idx = 0
 				for	i, e in enumerate(func_type_list):
-					if e == t_f_type:
-						result_str = str_list[i]
-						query_str = """
-							SELECT ?object
-							WHERE {{ <{}> <http://elite.polito.it/ontologies/eupont-ifttt.owl#name> ?object}}
-						""".format(result_str)
-						query.setQuery(query_str)
-						query_result = query.query().convert()
-						t_f_result = query_result['results']['bindings'][0]['object']['value']
+					cur_sim_cos = sim_cos(t_f_type, e)
+					if cur_sim_cos >= t_sim_cos:
+						result_idx = i
+						t_sim_cos = cur_sim_cos
+
+				result_str = str_list[result_idx]
+				query_str = """
+					SELECT ?object
+					WHERE {{ <{}> <http://elite.polito.it/ontologies/eupont-ifttt.owl#name> ?object}}
+				""".format(result_str)
+				query.setQuery(query_str)
+				query_result = query.query().convert()
+				t_f_result = query_result['results']['bindings'][0]['object']['value']
 			except Exception:
 				# use edit distance for fixing
 				func_name_list = []
@@ -182,20 +200,10 @@ def autoFix(predict, prev_probs, index, user_chan_list):
 	if a_c != a_f.split('.')[0:-1]:
 		if np.mean(prev_probs[2][index]) > np.mean(prev_probs[3][index]):
 	
+			query = SPARQLWrapper('http://202.120.40.28:4460/ifttt/query')
 			result['action_chan'] = a_f.split('.')[0:-1]
 	
 		else:
-			action_func_entity = '<http://elite.polito.it/ontologies/eupont-ifttt.owl#action{}{}>'.format(t_c.lower(), t_f.replace(' ', '').lower())
-			query_str = """
-				SELECT ?object
-				WHERE {{ {} <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?object }}
-			""".format(trigger_func_entity)
-			query = SPARQLWrapper('http://202.120.40.28:4460/ifttt/query')
-			query.setQuery(query_str)
-			query.setReturnFormat(JSON)
-			query_result = query.query().convert()
-			a_f_type = query_result['results']['bindings'][1]['object']['value']
-
 
 			result['action_chan'] = a_c
 			query_str = """
@@ -210,6 +218,15 @@ def autoFix(predict, prev_probs, index, user_chan_list):
 
 			a_f_result = ''
 			try:
+				action_func_entity = '<http://elite.polito.it/ontologies/eupont-ifttt.owl#action{}{}>'.format(t_c.lower(), t_f.replace(' ', '').lower())
+				query_str = """
+					SELECT ?object
+					WHERE {{ {} <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?object }}
+				""".format(trigger_func_entity)
+				query.setQuery(query_str)
+				query.setReturnFormat(JSON)
+				query_result = query.query().convert()
+				a_f_type = query_result['results']['bindings'][1]['object']['value']
 				# try to fix function with 'type'
 				func_type_list = []
 				for each in str_list:
@@ -220,17 +237,24 @@ def autoFix(predict, prev_probs, index, user_chan_list):
 					query.setQuery(query_name_str)
 					query_result = query.query().convert()
 
-					func_type_list.append(query_result['results']['bindings'][1]['object']['value'])
+					func_type_list.append([item['object']['value'] for item in query_result['results']['bindings']])
+				
+				a_sim_cos = 0
+				result_idx = 0
 				for	i, e in enumerate(func_type_list):
-					if e == t_f_type:
-						result_str = str_list[i]
-						query_str = """
-							SELECT ?object
-							WHERE {{ <{}> <http://elite.polito.it/ontologies/eupont-ifttt.owl#name> ?object}}
-						""".format(result_str)
-						query.setQuery(query_str)
-						query_result = query.query().convert()
-						a_f_result = query_result['results']['bindings'][0]['object']['value']
+					cur_sim_cos = sim_cos(a_f_type, e)
+					if cur_sim_cos >= a_sim_cos:
+						result_idx = i
+						a_sim_cos = cur_sim_cos
+
+				result_str = str_list[result_idx]
+				query_str = """
+					SELECT ?object
+					WHERE {{ <{}> <http://elite.polito.it/ontologies/eupont-ifttt.owl#name> ?object}}
+				""".format(result_str)
+				query.setQuery(query_str)
+				query_result = query.query().convert()
+				a_f_result = query_result['results']['bindings'][0]['object']['value']
 			except Exception:
 				# use edit distance for fixing
 				func_name_list = []
