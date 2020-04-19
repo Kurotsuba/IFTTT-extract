@@ -101,16 +101,27 @@ def autoFix(predict, prev_probs, index, user_chan_list):
 # if function does not belong to channel, fix them according to the probs
 	if t_c != t_f.split('.')[0:-1]:
 		if np.mean(prev_probs[0][index]) > np.mean(prev_probs[1][index]):
-		
+		# channel better than function
 			result['trigger_chan'] = t_f.split('.')[0:-1]
 		
 		else:
+		# function better than channel
+			trigger_func_entity = '<http://elite.polito.it/ontologies/eupont-ifttt.owl#trigger{}{}>'.format(t_c.lower(), t_f.replace(' ', '').lower())
+			query_str = """
+				SELECT ?object
+				WHERE {{ {} rdf:type ?object }}
+			""".format(trigger_func_entity)
+			query = SPARQLWrapper('http://202.120.40.28:4460/ifttt/query')
+			query.setQuery(query_str)
+			query.setReturnFormat(JSON)
+			query_result = query.query().convert()
+			t_f_type = query_result['results']['bindings'][1]['object']['value']
+			
 			result['trigger_chan'] = t_c
 			query_str = """
 				SELECT ?object 
 				WHERE {{ <{}{}> {} ?object }}
 			""".format(uri_subject_prefix, "".join(filter(str.isalnum, t_c.lower())), get_trigger_p)
-			query = SPARQLWrapper('http://202.120.40.28:4460/ifttt/query')
 			query.setQuery(query_str)
 			query.setReturnFormat(JSON)
 			query_result = query.query().convert()
@@ -121,27 +132,25 @@ def autoFix(predict, prev_probs, index, user_chan_list):
 			
 				query_name_str = """
 					SELECT ?object
-					WHERE {{ <{}> <http://elite.polito.it/ontologies/eupont-ifttt.owl#name> ?object }}
+					WHERE {{ <{}> rdf:type ?object }}
 				""".format(each)
 				query.setQuery(query_name_str)
 				query_result = query.query().convert()
 
-				func_name_list.append(query_result['results']['bindings'][0]['object']['value'])
-			# get function list of the channel
+				func_type_list.append(query_result['results']['bindings'][1]['object']['value'])
 
-			t_f = t_f.split('.')[-1]
-			min_dis = 99
 			t_f_result = ''
-			for	i in func_name_list:
-				try:
-					dis = editDis(t_f, i)
-				except IndexError:
-					print t_f, i
-					dis = 99
+			for	i, e in enumerate(func_type_list):
+				if e == t_f_type:
+					result_str = str_list[i]
+					query_str = """
+						SELECT ?object
+						WHERE {{ <{}> <http://elite.polito.it/ontologies/eupont-ifttt.owl#name> ?object}}
+					""".format(result_str)
+					query.setQuery(query_str)
+					query_result = query.query().convert()
+					t_f_result = query_result['results']['bindings'][0]['object']['value']
 
-				if dis <= min_dis:
-					min_dis = dis
-					t_f_result = i
 			result['trigger_func'] = '{}.{}'.format(t_c,t_f_result)
 	
 	if a_c != a_f.split('.')[0:-1]:
@@ -150,6 +159,18 @@ def autoFix(predict, prev_probs, index, user_chan_list):
 			result['action_chan'] = a_f.split('.')[0:-1]
 	
 		else:
+			action_func_entity = '<http://elite.polito.it/ontologies/eupont-ifttt.owl#action{}{}>'.format(t_c.lower(), t_f.replace(' ', '').lower())
+			query_str = """
+				SELECT ?object
+				WHERE {{ {} rdf:type ?object }}
+			""".format(trigger_func_entity)
+			query = SPARQLWrapper('http://202.120.40.28:4460/ifttt/query')
+			query.setQuery(query_str)
+			query.setReturnFormat(JSON)
+			query_result = query.query().convert()
+			a_f_type = query_result['results']['bindings'][1]['object']['value']
+
+
 			result['action_chan'] = a_c
 			query_str = """
 				 SELECT ?object
@@ -166,26 +187,26 @@ def autoFix(predict, prev_probs, index, user_chan_list):
 			for each in str_list:
 				query_name_str = """
 					SELECT ?object
-					WHERE {{ <{}> <http://elite.polito.it/ontologies/eupont-ifttt.owl#name> ?object }}
+					WHERE {{ <{}> rdf:type ?object }}
 				""".format(each)
 				query.setQuery(query_name_str)
 				query_result = query.query().convert()
 			
-			func_name_list.append(query_result['results']['bindings'][0]['object']['value'])
+			func_name_list.append(query_result['results']['bindings'][1]['object']['value'])
 			# get function list of the channel
 
-			a_f = a_f.split('.')[-1].replace(' ', '')
-			min_dis = 99
 			a_f_result = ''
 			for i in func_name_list:
-				try:
-					dis = editDis(a_f, i)
-				except IndexError:
-					print a_f, i
-					dis = 99
-				if dis <= min_dis:
-					min_dis = dis
-					a_f_result = i
+				for	i, e in enumerate(func_type_list):
+					if e == a_f_type:
+						result_str = str_list[i]
+						query_str = """
+							SELECT ?object
+							WHERE {{ <{}> <http://elite.polito.it/ontologies/eupont-ifttt.owl#name> ?object}}
+						""".format(result_str)
+						query.setQuery(query_str)
+						query_result = query.query().convert()
+						a_f_result = query_result['results']['bindings'][0]['object']['value']
 			result['action_func'] = '{}.{}'.format(a_c, a_f_result)
 	
 	for each in result.keys():
