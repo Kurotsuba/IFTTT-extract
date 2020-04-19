@@ -109,7 +109,7 @@ def autoFix(predict, prev_probs, index, user_chan_list):
 			trigger_func_entity = '<http://elite.polito.it/ontologies/eupont-ifttt.owl#trigger{}{}>'.format(t_c.lower(), t_f.replace(' ', '').lower())
 			query_str = """
 				SELECT ?object
-				WHERE {{ {} rdf:type ?object }}
+				WHERE {{ {} <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?object }}
 			""".format(trigger_func_entity)
 			query = SPARQLWrapper('http://202.120.40.28:4460/ifttt/query')
 			query.setQuery(query_str)
@@ -127,30 +127,56 @@ def autoFix(predict, prev_probs, index, user_chan_list):
 			query_result = query.query().convert()
 			str_list = [each['object']['value'] for each in query_result['results']['bindings']]
 		
-			func_name_list = []
-			for each in str_list:
-			
-				query_name_str = """
-					SELECT ?object
-					WHERE {{ <{}> rdf:type ?object }}
-				""".format(each)
-				query.setQuery(query_name_str)
-				query_result = query.query().convert()
-
-				func_type_list.append(query_result['results']['bindings'][1]['object']['value'])
 
 			t_f_result = ''
-			for	i, e in enumerate(func_type_list):
-				if e == t_f_type:
-					result_str = str_list[i]
-					query_str = """
+			try:
+				# try to fix function with 'type'
+				func_type_list = []
+				for each in str_list:
+					query_name_str = """
 						SELECT ?object
-						WHERE {{ <{}> <http://elite.polito.it/ontologies/eupont-ifttt.owl#name> ?object}}
-					""".format(result_str)
-					query.setQuery(query_str)
+						WHERE {{ <{}> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?object }}
+					""".format(each)
+					query.setQuery(query_name_str)
 					query_result = query.query().convert()
-					t_f_result = query_result['results']['bindings'][0]['object']['value']
 
+					func_type_list.append(query_result['results']['bindings'][1]['object']['value'])
+				for	i, e in enumerate(func_type_list):
+					if e == t_f_type:
+						result_str = str_list[i]
+						query_str = """
+							SELECT ?object
+							WHERE {{ <{}> <http://elite.polito.it/ontologies/eupont-ifttt.owl#name> ?object}}
+						""".format(result_str)
+						query.setQuery(query_str)
+						query_result = query.query().convert()
+						t_f_result = query_result['results']['bindings'][0]['object']['value']
+			except Exception:
+				# use edit distance for fixing
+				func_name_list = []
+				for each in str_list:
+					query_name_str = """
+						SELECT ?object
+						WHERE {{ <{}> <http://elite.polito.it/ontologies/eupont-ifttt.owl#name> ?object }}
+					""".format(each)
+					query.setQuery(query_name_str)
+					query_result = query.query().convert()
+					func_name_list.append(query_result['results']['bindings'][0]['object']['value'])
+            
+					t_f = t_f.split('.')[-1]
+					min_dis = 99
+
+					for i in func_name_list:
+						try:
+							dis = editDis(t_f, i)
+						except IndexError:
+							print t_f, i
+							dis = 99
+
+						if dis <= min_dis:
+							min_dis = dis
+							t_f_result = i
+			
 			result['trigger_func'] = '{}.{}'.format(t_c,t_f_result)
 	
 	if a_c != a_f.split('.')[0:-1]:
@@ -162,7 +188,7 @@ def autoFix(predict, prev_probs, index, user_chan_list):
 			action_func_entity = '<http://elite.polito.it/ontologies/eupont-ifttt.owl#action{}{}>'.format(t_c.lower(), t_f.replace(' ', '').lower())
 			query_str = """
 				SELECT ?object
-				WHERE {{ {} rdf:type ?object }}
+				WHERE {{ {} <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?object }}
 			""".format(trigger_func_entity)
 			query = SPARQLWrapper('http://202.120.40.28:4460/ifttt/query')
 			query.setQuery(query_str)
@@ -182,23 +208,21 @@ def autoFix(predict, prev_probs, index, user_chan_list):
 			query_result = query.query().convert()
 			str_list = [each['object']['value'] for each in query_result['results']['bindings']]
 
-
-			func_name_list = []
-			for each in str_list:
-				query_name_str = """
-					SELECT ?object
-					WHERE {{ <{}> rdf:type ?object }}
-				""".format(each)
-				query.setQuery(query_name_str)
-				query_result = query.query().convert()
-			
-			func_name_list.append(query_result['results']['bindings'][1]['object']['value'])
-			# get function list of the channel
-
 			a_f_result = ''
-			for i in func_name_list:
+			try:
+				# try to fix function with 'type'
+				func_type_list = []
+				for each in str_list:
+					query_name_str = """
+						SELECT ?object
+						WHERE {{ <{}> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?object }}
+					""".format(each)
+					query.setQuery(query_name_str)
+					query_result = query.query().convert()
+
+					func_type_list.append(query_result['results']['bindings'][1]['object']['value'])
 				for	i, e in enumerate(func_type_list):
-					if e == a_f_type:
+					if e == t_f_type:
 						result_str = str_list[i]
 						query_str = """
 							SELECT ?object
@@ -207,6 +231,31 @@ def autoFix(predict, prev_probs, index, user_chan_list):
 						query.setQuery(query_str)
 						query_result = query.query().convert()
 						a_f_result = query_result['results']['bindings'][0]['object']['value']
+			except Exception:
+				# use edit distance for fixing
+				func_name_list = []
+				for each in str_list:
+					query_name_str = """
+						SELECT ?object
+						WHERE {{ <{}> <http://elite.polito.it/ontologies/eupont-ifttt.owl#name> ?object }}
+					""".format(each)
+					query.setQuery(query_name_str)
+					query_result = query.query().convert()
+					func_name_list.append(query_result['results']['bindings'][0]['object']['value'])
+            
+					a_f = a_f.split('.')[-1]
+					min_dis = 99
+
+					for i in func_name_list:
+						try:
+							dis = editDis(a_f, i)
+						except IndexError:
+							print a_f, i
+							dis = 99
+
+						if dis <= min_dis:
+							min_dis = dis
+							a_f_result = i
 			result['action_func'] = '{}.{}'.format(a_c, a_f_result)
 	
 	for each in result.keys():
