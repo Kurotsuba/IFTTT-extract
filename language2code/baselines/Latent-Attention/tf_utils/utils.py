@@ -96,7 +96,9 @@ class TFMainLoop(object):
     with tf.variable_scope('model', reuse=True, initializer=initializer):
       mvalid = self.create_model(is_training=False)
     saver = tf.train.Saver(max_to_keep=0)
-    session = tf.Session()
+    config = tf.ConfigProto()
+    config.gpu_options.allow_growth = True
+    session = tf.Session(config=config)
     if load_model:
       saver.restore(session, load_model)
     else:

@@ -333,6 +333,7 @@ class IftttTrain(tf_utils.TFMainLoop):
     trigger_funcs = trans_data['labelers']['trigger_funcs']
     action_funcs = trans_data['labelers']['action_funcs']
 
+    mean_list = [np.mean(each) for each in self.prev_probs]
     for i, e in enumerate(correct):
       if  (False in e):
         incorrect_item = {'ids': ids[i], 'preds': preds[i], 'labels': labels[i]}
@@ -365,7 +366,25 @@ class IftttTrain(tf_utils.TFMainLoop):
       incorrects.append({'ids': ids[i],
                           'preds': preds[i],
                           'labels': labels[i]})
+      
+      # when prob is lower than a threshold, than make it None and set correct to True
+      try:
+        thres = 0.25
+        if(mean_list[0] * thres > np.mean(self.prev_probs[0][i])):
+          correct[i][0] = True
+          correct[i][1] = True
+        if(mean_list[1] * thres > np.mean(self.prev_probs[1][i])):
+          correct[i][1] = True
+        if(mean_list[2] * thres > np.mean(self.prev_probs[2][i])):
+          correct[i][2] = True
+          correct[i][3] = True
+        if(mean_list[3] * thres > np.mean(self.prev_probs[3][i])):
+          correct[i][3] = True
+      except IndexError:
+        pass
 
+
+        
     if self.label_types == [0, 1, 2, 3]:
       correct = np.concatenate(
           (correct, np.all(correct[:, [0, 2]], axis=1)[:, np.newaxis],
