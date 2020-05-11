@@ -69,21 +69,13 @@ for each in channel_dict.keys():
 	
 	channel_dict[each] = func_list
 
-with open('chan_attr_graph.pkl', 'wb') as f:
-	pickle.dump(channel_dict, f)
+with open('readable_attr.csv', 'w') as f:	
+	for func_list in channel_dict.values():
+		for each in func_list:
+			for attr in each.attr_list:
+				attr_name = attr.replace(each.URI.replace('#', '#detail').replace('>', '').replace('<', ''), '')
+				f.write('{}, {}\n'.format(each.name, attr_name))
 
-func_list = []
-for each in channel_dict.values():
-	func_list += each
-
-func_num = len(func_list)
-func_attr_num = 0
-
-for each in func_list:
-	if each.has_attribute:
-		func_attr_num += 1
-
-print('attr: {}, total: {}'.format(func_attr_num, func_num))
 
 		 
 
